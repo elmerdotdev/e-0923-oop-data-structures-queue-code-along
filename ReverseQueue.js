@@ -3,11 +3,13 @@ const Queue = require('./Queue')
 function reverseQueue(queue) {
   const secondQueue = []
 
+  // Transfer main queue to second queue
   while (!queue.isEmpty()) {
     let current = queue.dequeue()
     secondQueue.push(current)
   }
 
+  // Transfer from second queue to main queue
   while (secondQueue.length > 0) {
     let current = secondQueue.pop()
     queue.enqueue(current)
